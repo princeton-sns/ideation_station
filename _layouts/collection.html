@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<ul class="project_list">
+{%- for idea in site[page.collection] %}
+  <li>
+    <h3><a href="{{idea.url}}">{{ idea.title }}</a></h3>
+    <p>{{ idea.content | truncatewords:10 | strip_html }}</p>
+{%- endfor -%}
+</ul>

@@ -1,0 +1,7 @@
+_site
+.envrc
+.direnv/
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor

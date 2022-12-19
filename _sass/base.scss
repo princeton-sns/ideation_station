@@ -1,0 +1,134 @@
+html {
+  font-size: $text-base-size;
+}
+
+body {
+  font-family: $body-font;
+  line-height: 1.5;
+  display: grid;
+  max-width: $desktop;
+  margin: 0 auto;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "nav"
+    "content"
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font;
+  margin: 0;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  &:hover, &:active, &:focus {
+    color: $accent-color;
+    text-decoration: underline;
+  }
+}
+
+ul {
+  list-style-type: square;
+}
+
+body > header {
+  display: grid;
+  grid-area: header;
+  grid-template-columns: 1fr;
+  grid-row-gap: 1em;
+  grid-template-areas:
+    "masthead";
+
+  background-color: $primary-bg-color;
+  background-size: auto 100%;
+  padding-top: 3.75em;
+  padding-bottom: 3.75em;
+
+  h1 {
+    grid-area: masthead;
+    font-family: $masthead-font;
+    margin: 0 auto;
+    font-size: 3.75em;
+    text-align: center;
+    width: 90%;
+  }
+}
+
+// Navigation bar below header transforms an ordered list into a horizontal
+// nav-bar style.
+//
+// Links rendered in main font color normally, switching to Princeton black
+// with Princeton orange font when hovering or active.
+nav {
+  grid-area: nav;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "items";
+  width: calc(100% - 2em);
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 11px 11px 0 0;
+  ul {
+    grid-area: items;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      display: inline-block;
+      text-align: center;
+      a {
+        display: inline-block;
+        color: $main-color;
+        text-decoration: none;
+        font-size: 1em;
+        padding: 1em 1.45em;
+
+        &:hover, &.active {
+          background-color: $secondary-bg-color;
+          color: $secondary-fg-color;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+// Basic main content styling
+body > main {
+  grid-area: content;
+  width: calc(100% - 2em);
+  margin: 0 auto;
+  h1 {
+    font-size: 3em;
+    font-weight: normal;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+}
+
+// Publications are structured like so:
+// <h3>Paper title</h3>
+// <p class="authors">List Of, Authors In, The Paper.</p>
+// <p class="venue">In proceedings of the 9th conference on web design</p>
+// <p>
+//   [<a href="/assets/papers/9-webdev.pdf">paper</a>]
+//   [<a href="/assets/slides/9-webdev.pdf">presentation</a>]
+// </p>
+main > ul {
+  h2 {
+    color: red;
+    font-size: 1em;
+    font-weight: normal;
+    font-family: inherit;
+    padding: 0;
+    margin: 0;
+  }
+  p {
+    padding: 0;
+    margin: 0;
+  }
+}

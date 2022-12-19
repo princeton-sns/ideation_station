@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+    <title>{% if page.title %}{{ page.title}} | {% endif %}{{ site.title  }}</title>
+  </head>
+  <body>
+    <header>
+      <h1>{{ site.title  }}</h1>
+    </header>
+    <nav>
+      <ul>
+{%- for nav in site.data.navigation %}
+        <li><a href="{{ nav.url }}"{% if nav.url == page.url %} class="active"{% endif %}>{{ nav.text }}</a></li>
+{%- endfor -%}
+      </ul>
+    </nav>
+    <main>
+      <h1>{{ page.title }}</h2>
+    {% if page.author %} <header>
+        <address>
+          by <a ref="author">{{ page.author  }}</a>
+        </address>
+      </header>{% endif %}
+    {{ content  }}
+    </main>
+  </body>
+</html>
