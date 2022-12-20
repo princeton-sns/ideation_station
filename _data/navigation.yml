@@ -1,6 +1,9 @@
-- text: New Ideas
+- text: New
+  status: new
   url: /
-- text: Active Projects
-  url: /projects.html
-- text: Completed Projects
-  url: /archive.html
+- text: Active
+  status: active
+  url: /active.html
+- text: Completed
+  status: completed
+  url: /completed.html

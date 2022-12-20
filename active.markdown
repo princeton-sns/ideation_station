@@ -1,6 +1,6 @@
 ---
 title: Active Projects
-collection: projects
+collection: active
 layout: collection
 ---
 

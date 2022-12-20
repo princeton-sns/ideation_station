@@ -1,5 +1,5 @@
 ---
 title: Completed Projects
-collection: archive
+collection: completed
 layout: collection
 ---

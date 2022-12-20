@@ -1,6 +1,7 @@
 ---
 title: Sharded Noise Server
 author: Shai
+status: new
 ---
 
-What about a server that was shaded?
+TODO

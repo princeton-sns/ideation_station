@@ -1,10 +1,16 @@
 ---
 layout: default
 ---
+{% assign ideas = site.ideas | where:"status",page.collection %}
 <ul class="project_list">
-{%- for idea in site[page.collection] %}
+{%- for idea in ideas reversed %}
   <li>
     <h3><a href="{{idea.url}}">{{ idea.title }}</a></h3>
+    {%-  if idea.excerpt %}
+    <p>{{ idea.excerpt }}</p>
+    {%-  else -%}
     <p>{{ idea.content | truncatewords:10 | strip_html }}</p>
-{%- endfor -%}
+    {%-  endif %}
+  </li>
+{%- endfor %}
 </ul>

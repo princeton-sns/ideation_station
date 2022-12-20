@@ -1,5 +1,5 @@
 ---
 title: New Ideas
-collection: ideas
+collection: new
 layout: collection
 ---
